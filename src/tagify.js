@@ -310,7 +310,7 @@ Tagify.prototype = {
 
         var _s = this.settings = extend({}, this.DEFAULTS, settings);
         _s.readonly = input.hasAttribute('readonly') // if "readonly" do not include an "input" element inside the Tags component
-        _s.placeholder = input.getAttribute('placeholder') || _s.placeholder || ""
+        _s.placeholder = escapeHTML(input.getAttribute('placeholder') || _s.placeholder || "")
         _s.required = input.hasAttribute('required')
 
         if( this.isIE )
